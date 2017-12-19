@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MarkdownPad Document</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+        /* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+        /* Author: Nicolas Hery - http://nicolashery.com */
+        /* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+        /* Source: https://github.com/nicolahery/markdownpad-github */
+
+        /* RESET
+        =============================================================================*/
+
+        html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        /* BODY
+        =============================================================================*/
+
+        body {
+            font-family: Helvetica, arial, freesans, clean, sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+            padding: 20px;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        body>*:first-child {
+            margin-top: 0 !important;
+        }
+
+        body>*:last-child {
+            margin-bottom: 0 !important;
+        }
+
+        /* BLOCKS
+        =============================================================================*/
+
+        p, blockquote, ul, ol, dl, table, pre {
+            margin: 15px 0;
+        }
+
+        /* HEADERS
+        =============================================================================*/
+
+        h1, h2, h3, h4, h5, h6 {
+            margin: 20px 0 10px;
+            padding: 0;
+            font-weight: bold;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+            font-size: inherit;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #000;
+        }
+
+        h2 {
+            font-size: 24px;
+            border-bottom: 1px solid #ccc;
+            color: #000;
+        }
+
+        h3 {
+            font-size: 18px;
+        }
+
+        h4 {
+            font-size: 16px;
+        }
+
+        h5 {
+            font-size: 14px;
+        }
+
+        h6 {
+            color: #777;
+            font-size: 14px;
+        }
+
+        body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+            margin-top: 0;
+            padding-top: 0;
+        }
+
+        a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+            margin-top: 0;
+            padding-top: 0;
+        }
+
+        h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+            margin-top: 10px;
+        }
+
+        /* LINKS
+        =============================================================================*/
+
+        a {
+            color: #4183C4;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* LISTS
+        =============================================================================*/
+
+        ul, ol {
+            padding-left: 30px;
+        }
+
+        ul li > :first-child,
+        ol li > :first-child,
+        ul li ul:first-of-type,
+        ol li ol:first-of-type,
+        ul li ol:first-of-type,
+        ol li ul:first-of-type {
+            margin-top: 0px;
+        }
+
+        ul ul, ul ol, ol ol, ol ul {
+            margin-bottom: 0;
+        }
+
+        dl {
+            padding: 0;
+        }
+
+        dl dt {
+            font-size: 14px;
+            font-weight: bold;
+            font-style: italic;
+            padding: 0;
+            margin: 15px 0 5px;
+        }
+
+        dl dt:first-child {
+            padding: 0;
+        }
+
+        dl dt>:first-child {
+            margin-top: 0px;
+        }
+
+        dl dt>:last-child {
+            margin-bottom: 0px;
+        }
+
+        dl dd {
+            margin: 0 0 15px;
+            padding: 0 15px;
+        }
+
+        dl dd>:first-child {
+            margin-top: 0px;
+        }
+
+        dl dd>:last-child {
+            margin-bottom: 0px;
+        }
+
+        /* CODE
+        =============================================================================*/
+
+        pre, code, tt {
+            font-size: 12px;
+            font-family: Consolas, "Liberation Mono", Courier, monospace;
+        }
+
+        code, tt {
+            margin: 0 0px;
+            padding: 0px 0px;
+            white-space: nowrap;
+            border: 1px solid #eaeaea;
+            background-color: #f8f8f8;
+            border-radius: 3px;
+        }
+
+        pre>code {
+            margin: 0;
+            padding: 0;
+            white-space: pre;
+            border: none;
+            background: transparent;
+        }
+
+        pre {
+            background-color: #f8f8f8;
+            border: 1px solid #ccc;
+            font-size: 13px;
+            line-height: 19px;
+            overflow: auto;
+            padding: 6px 10px;
+            border-radius: 3px;
+        }
+
+        pre code, pre tt {
+            background-color: transparent;
+            border: none;
+        }
+
+        kbd {
+            -moz-border-bottom-colors: none;
+            -moz-border-left-colors: none;
+            -moz-border-right-colors: none;
+            -moz-border-top-colors: none;
+            background-color: #DDDDDD;
+            background-image: linear-gradient(#F1F1F1, #DDDDDD);
+            background-repeat: repeat-x;
+            border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+            border-image: none;
+            border-radius: 2px 2px 2px 2px;
+            border-style: solid;
+            border-width: 1px;
+            font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+            line-height: 10px;
+            padding: 1px 4px;
+        }
+
+        /* QUOTES
+        =============================================================================*/
+
+        blockquote {
+            border-left: 4px solid #DDD;
+            padding: 0 15px;
+            color: #777;
+        }
+
+        blockquote>:first-child {
+            margin-top: 0px;
+        }
+
+        blockquote>:last-child {
+            margin-bottom: 0px;
+        }
+
+        /* HORIZONTAL RULES
+        =============================================================================*/
+
+        hr {
+            clear: both;
+            margin: 15px 0;
+            height: 0px;
+            overflow: hidden;
+            border: none;
+            background: transparent;
+            border-bottom: 4px solid #ddd;
+            padding: 0;
+        }
+
+        /* TABLES
+        =============================================================================*/
+
+        table th {
+            font-weight: bold;
+        }
+
+        table th, table td {
+            border: 1px solid #ccc;
+            padding: 6px 13px;
+        }
+
+        table tr {
+            border-top: 1px solid #ccc;
+            background-color: #fff;
+        }
+
+        table tr:nth-child(2n) {
+            background-color: #f8f8f8;
+        }
+
+        /* IMAGES
+        =============================================================================*/
+
+        img {
+            max-width: 100%
+        }
+    </style>
+</head>
+<body>
+<h2>No.01 数据库 —— 迁移</h2>
+<p>Author：叶帆</p>
+<h4>1、开发前说明：</h4>
+<blockquote>
+    <p>调试的时候千万不要连测试环境、线上环境的库，先自己本地的试一下，切换env数据库配置。</p>
+</blockquote>
+<h4>2、5.4版本的数据迁移基本命令地址：</h4>
+<blockquote>
+    <p><a href="http://laravelacademy.org/post/6964.html" title="5.4版本的数据迁移基本命令地址">http://laravelacademy.org/post/6964.html</a></p>
+</blockquote>
+<h4>3、规范：</h4>
+<blockquote>
+    <p>迁移文件：
+    </p>
+</blockquote>
+<pre><code>有关新表独立一个迁移文件
+所有字段改动、表名改动建一个迁移文件，具体看【5、使用场景】下的【(5)、迁移调试】
+</code></pre>
+
+<blockquote>
+    <p>命名规则：</p>
+</blockquote>
+<pre><code>新增数据库\添加字段\添加外键\修改字段（删、改）\批量修改
+具体如下
+</code></pre>
+
+<blockquote>
+    <p>新增数据库：</p>
+</blockquote>
+<pre><code>php artisan make:migration create_表名_table
+</code></pre>
+
+<blockquote>
+    <p>添加字段：</p>
+</blockquote>
+<pre><code>php artisan make:migration add_column_表名_table
+</code></pre>
+
+<blockquote>
+    <p>添加外键（特殊、需要独立\添加外键表建完之后在写外键添加文件）：</p>
+</blockquote>
+<pre><code>php artisan make:migration add_foreign_keys_表名_table
+</code></pre>
+
+<blockquote>
+    <p>修改字段（删、改）</p>
+</blockquote>
+<pre><code>php artisan make:migration modify_column_表名_table
+</code></pre>
+
+<blockquote>
+    <p>修改一系列表、字段（以services层区分）：</p>
+</blockquote>
+<pre><code>php artisan make:migration modify_series_of_修改业务描述(services层名称)
+</code></pre>
+
+<h4>4、迁移指令</h4>
+<blockquote>
+    <p>执行所有未操作迁移文件：</p>
+</blockquote>
+<pre><code>php artisan migrate
+</code></pre>
+
+<blockquote>
+    <p>回滚上次迁移操作：</p>
+</blockquote>
+<pre><code>php artisan migrate:rollback
+</code></pre>
+
+<blockquote>
+    <p>回滚所有的迁移（会删掉所有表和数据）：</p>
+</blockquote>
+<pre><code>php artisan migrate:reset
+</code></pre>
+
+<blockquote>
+    <p>删除数据库、重新创建它并将加载当前架构：</p>
+</blockquote>
+<pre><code>php artisan migrate:refresh
+</code></pre>
+
+<blockquote>
+    <p>创建表：
+    </p>
+</blockquote>
+<pre><code>php artisan make:migration create_users_table
+</code></pre>
+
+<blockquote>
+    <p>添加字段：</p>
+</blockquote>
+<pre><code>php artisan make:migration add_email_column_to_users_table
+</code></pre>
+
+<blockquote>
+    <p>其他暂未用到操作：</p>
+</blockquote>
+<pre><code>migrate:install
+migrate:make
+</code></pre>
+
+<h4>5、使用场景</h4>
+<h5>(1)、migrate文件路径：D:\code\www\ideabuy\database\migrations</h5>
+<blockquote>
+    <p>执行表的修改</p>
+</blockquote>
+<pre><code>function up()
+</code></pre>
+
+<blockquote>
+    <p>执行回滚每次写完都自己调试下up与down </p>
+</blockquote>
+<pre><code>function down()
+</code></pre>
+
+<h5>(2)、新建表(具体可以看项目里的例子)：</h5>
+<blockquote>
+    <p>执行 php artisan make:migration create<em>表前缀</em>表名_table 创建表迁移文件 <br />
+        内部操作，默认有配置前缀这边表名不用加</p>
+</blockquote>
+<pre><code>public function up()
+{
+    Schema::create('encrypt_token', function(Blueprint $table)
+    {
+        $table-&gt;integer('id', true);
+        $table-&gt;string('name', 128)-&gt;nullable()-&gt;comment('项目名');
+        $table-&gt;string('token', 128)-&gt;nullable()-&gt;comment('token值');
+        $table-&gt;string('publickey_path')-&gt;nullable()-&gt;comment('公钥路径');
+        $table-&gt;boolean('is_used')-&gt;default(1)-&gt;comment('是否适用');
+        $table-&gt;engine = 'MyISAM';
+        $table-&gt;comment = 'RSA加密、解密秘钥';
+    });
+}
+
+public function down()
+{
+    Schema::drop('encrypt_token');
+}
+</code></pre>
+
+<h5>(3)、字段、索引等新增：</h5>
+<pre><code>public function up()
+{
+    Schema::table('user_third', function(Blueprint $table)
+    {
+        $table-&gt;dropUnique('openid');
+    });
+
+    Schema::table('admin_log', function(Blueprint $table)
+    {
+        $table-&gt;dropColumn(['operate_type', 'operate_module', 'operate_name']);
+        $table-&gt;string('operate_target', 30)-&gt;comment('操作模块');
+    });
+}
+
+public function down()
+{
+    Schema::table('user_third', function(Blueprint $table)
+    {
+        $table-&gt;unique('openid');
+    });
+
+    Schema::table('admin_log', function(Blueprint $table)
+    {
+        $table-&gt;boolean('operate_type')-&gt;default(0)-&gt;comment('数据操作类型(1增加 2删除 3修改 4查看 5登录)');
+        $table-&gt;string('operate_module', 30)-&gt;comment('操作模块');
+        $table-&gt;string('operate_name', 30)-&gt;comment('操作名称');
+        $table-&gt;dropColumn('operate_target');
+    });
+}
+</code></pre>
+
+<h5>(4)、表名修改：例子来源\消息模板表的修改</h5>
+<blockquote>
+    <p>实现功能 =&gt; 修改消息模板、消息模板关键字表名以及新增字段</p>
+</blockquote>
+<pre><code>public function up()
+{
+    if ( Schema::hasTable('system_sms_template') ) {
+        if( Schema::hasTable('system_msg_template') ){
+            Schema::dropIfExists('system_sms_template');
+        }else{
+            Schema::rename('system_sms_template', 'system_msg_template');
+            Schema::table('system_msg_template', function(Blueprint $table) {
+                if (!Schema::hasColumn('system_msg_template', 'msg_tag')) {
+                    $table-&gt;string('msg_tag',20)-&gt;nullable()-&gt;comment('短信标签');
+                }
+                if (!Schema::hasColumn('system_msg_template', 'msg_tag')) {
+                    $table-&gt;string('msg_type')-&gt;nullable()-&gt;comment('消息类型');
+                }
+                if (!Schema::hasColumn('system_msg_template', 'msg_tag')) {
+                    $table-&gt;string('msg_title')-&gt;nullable()-&gt;comment('消息标题');
+                }
+            });
+        }
+    }
+    if ( Schema::hasTable('system_sms_template_info') ) {
+        if( Schema::hasTable('system_msg_template_info') ){
+            Schema::dropIfExists('system_sms_template_info');
+        }else{
+            Schema::rename('system_sms_template_info', 'system_msg_template_info');
+            Schema::table('system_msg_template_info', function(Blueprint $table) {
+                if (!Schema::hasColumn('system_msg_template_info', 'msg_tag')) {
+                    $table-&gt;string('keyword_zh')-&gt;nullable()-&gt;default('')-&gt;comment('关键字中文注释');
+                }
+            });
+        }
+    }
+}
+
+public function down()
+{
+    // 回滚判断
+    // 1、新表是否存在
+    // 2、原表（防止转移库发现原表还存在）=&gt; 存在 执行新表删除，不存在 执行改表操作后 重命名
+    if ( Schema::hasTable('system_msg_template') ) {
+        if ( Schema::hasTable('system_sms_template') ) {
+            Schema::dropIfExists('system_msg_template');
+        }else{
+            Schema::table('system_msg_template', function(Blueprint $table) {
+                $table-&gt;dropColumn(['msg_tag', 'msg_type', 'msg_title']);
+            });
+            Schema::rename('system_msg_template', 'system_sms_template');
+        }
+    }
+    if ( Schema::hasTable('system_msg_template_info') ) {
+        if ( Schema::hasTable('system_sms_template_info') ) {
+            Schema::dropIfExists('system_msg_template_info');
+        }else{
+            Schema::table('system_msg_template_info', function(Blueprint $table) {
+                if (!Schema::hasColumn('system_msg_template_info', 'keyword_zh')) {
+                    $table-&gt;dropColumn('keyword_zh');
+                }
+            });
+            Schema::rename('system_msg_template_info', 'system_sms_template_info');
+        }
+    }
+}
+</code></pre>
+
+<h5>(5)、迁移调试：</h5>
+<ul>
+    <li>
+        <p>新项目刚开始部署的时候多使用refresh\rollbck等命令确保迁移脚本没有问题。</p>
+    </li>
+    <li>
+        <p>项目迭代更新，每次有修改就写一个迁移文件 执行 php artisan migrate(执行所有未操作迁移文件) 就可以，切记不要使用refresh这会清空数据库内的数据。</p>
+    </li>
+    <li>
+        <p>如果你的项目还在开发阶段未部署到dev与test等线上环境，所有表字段修改都可以直接写到这个表的迁移文件中，如果在迭代开发了，就按照上一步的标准来。</p>
+    </li>
+</ul>
+<h4>6、注意点：</h4>
+<h5>(1)、存储引擎：</h5>
+<blockquote>
+    <p>一般固定的都是InnoDB，做迁移时可以不用添加，但如果用到的是MyISAM，请在代码末尾添加如下代码</p>
+</blockquote>
+<pre><code>$table-&gt;engine = 'MyISAM';
+</code></pre>
+
+<h5>(2)、表说明：</h5>
+<blockquote>
+    <p>写法如下，但目前无法生成</p>
+</blockquote>
+<pre><code>$table-&gt;comment = '短消息记录表';
+</code></pre>
+
+<h5>(3)、当你不确定原先表\字段是否存在时，可以先判断判断表\字段的存在性：</h5>
+<blockquote>
+    <p>判断表 =&gt;</p>
+</blockquote>
+<pre><code>if (Schema::hasTable('users')) {
+    //
+}
+</code></pre>
+
+<blockquote>
+    <p>判断表中字段 =&gt;</p>
+</blockquote>
+<pre><code>if (Schema::hasColumn('users', 'email')) {
+    //
+}
+</code></pre>
+
+<h5>(4)、时间参数（数据库版本存在不兼容 mysql5.7默认值要<code>0001-01-01</code>才能用）</h5>
+<pre><code>默认不要设置0000-00-00 00:00:00 直接default null
+</code></pre>
+
+<h2>No.02 数据库 —— 填充数据</h2>
+<p><a href="http://laravelacademy.org/post/6970.html" title="5.4填充数据教程地址">http://laravelacademy.org/post/6970.html</a></p>
+<blockquote>
+    <p>写单元测试添加数据时不要存在跟数据填充写的数据重复</p>
+</blockquote>
+<h4>1、数据填充文件地址</h4>
+<pre><code>路径地址：D:\code\www\ideabuy\database\seeds
+</code></pre>
+
+<h4>2、命令</h4>
+<blockquote>
+    <p>数据填充文件创建</p>
+</blockquote>
+<pre><code>php artisan make:seeder UserTableSeeder
+</code></pre>
+
+<blockquote>
+    <p>运行所有填充</p>
+</blockquote>
+<pre><code>php artisan db:seed
+</code></pre>
+
+<blockquote>
+    <p>运行单个填充</p>
+</blockquote>
+<pre><code>php artisan db:seed --class=UserTableSeeder
+</code></pre>
+
+<h4>3、实例</h4>
+<h6>(1)、原生sql批量</h6>
+<pre><code>public function run()
+{
+    $data = [
+        ['1', 'index', '仪表盘', '一级导航', '0', '1', '/dashboard', '2017-07-27 15:59:00', '2017-08-02 15:17:43'],
+        ['2', 'contentManage', '内容管理', '一级导航', '0', '1', '/content', '2017-07-27 15:59:00', '2017-08-12 10:40:33'],
+        ['3', 'adType', '广告分类', '控制器', '2', '2', '/content/ad-type', '2017-07-27 15:59:00', '2017-07-27 15:59:00'],
+        ['4', 'adTypeList', '广告分类列表', '方法', '3', '3', null, '2017-07-27 15:59:00', '2017-07-27 15:59:00'],
+        ['5', 'adTypeAdd', '广告分类添加', '方法', '3', '3', null, '2017-07-27 15:59:00', '2017-07-27 15:59:00'],
+        ['6', 'adTypeEdit', '广告分类编辑', '方法', '3', '3', null, '2017-07-27 15:59:00', '2017-07-27 15:59:00']
+    ];
+    foreach ($data as $k=&gt;$v) {
+        DB::insert(
+            'insert into wk_permissions (id,name,display_name,description,pid,level,path,created_at,updated_at) values (?,?,?,?,?,?,?,?,?)',
+            $data[$k]
+        );
+    }
+}
+</code></pre>
+
+<h6>(2)、带键值（不推荐）</h6>
+<pre><code>DB::table('users')-&gt;insert(
+    ['name' =&gt; str_random(10),'email' =&gt; str_random(10).'@gmail.com','password' =&gt; bcrypt('secret'),],
+    ['name' =&gt; str_random(10),'email' =&gt; str_random(10).'@gmail.com','password' =&gt; bcrypt('secret'),]
+);
+</code></pre>
+
+<h6>(3)、使用Eloquent 模型工厂</h6>
+<blockquote>
+    <p>待完善~~~</p>
+</blockquote>
+<h6>(4)、高效迁移方法(结合第一种、第二种方法)</h6>
+<pre><code>$data = [
+    ['1', 'iPhone app', 'Ue75Vtmwvhxwr6qf', 'rsa_public_key.pem', '1'],
+    ['2', 'android app', '5B8sNSP3hedG3LuB', 'rsa_public_key_android.pem', '1'],
+];
+
+$field = ['id','name','token','publickey_path','is_used'];
+
+DB::table('encrypt_token')-&gt;insert(sql_batch_str($field,$data));
+
+
+/**
+ * 批量插入SQL拼接
+ * @param $field
+ * @param $params
+ * @return array
+ */
+function sql_batch_str($field, $params) {
+    $data = [];
+    foreach ($params as $key =&gt; $value) {
+        $data_info = [];
+        foreach ($value as $k1 =&gt; $v1) {
+            foreach ($field as $k2 =&gt; $v2) {
+                if ($k1 == $k2) {
+                    $data_info[$v2] = $v1;continue;
+                }
+            }
+        }
+        $data[] = $data_info;
+    }
+    return $data;
+}
+</code></pre>
+
+<h4>4、具体实施</h4>
+<blockquote>
+    <p>思路：  <br />
+        默认路径下有一个DatabaseSeeder的文件，执行 php artisan db:seed 统一调用这个类。<br />
+        所以我们在同级目录下创建填充文件、写数据填充，然后DatabaseSeede类调用<br />
+        代码：</p>
+</blockquote>
+<pre><code>class DatabaseSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+         $this-&gt;call(UserTableSeeder::class);
+    }
+
+}
+</code></pre>
+
+<blockquote>
+    <p>不断开发完善中，敬请期待~~~</p>
+</blockquote>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
